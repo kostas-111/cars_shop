@@ -1,5 +1,7 @@
 package ru.job4j.cars.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -22,4 +24,12 @@ public class User {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @ManyToMany
+    @JoinTable(
+        name = "participates",
+        joinColumns = { @JoinColumn(name = "user_id") },
+        inverseJoinColumns = { @JoinColumn(name = "post_id") }
+    )
+    private List<Post> posts = new ArrayList<>();
 }
