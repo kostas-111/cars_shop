@@ -1,5 +1,6 @@
 package ru.job4j.cars.model;
 
+import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -40,4 +41,8 @@ public class Post {
 	@ManyToOne
 	@JoinColumn(name = "auto_user_id")
 	private User user;
+
+	@OneToOne
+	@JoinColumn(name = "car_id")
+	private Car car;
 }

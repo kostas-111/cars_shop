@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import org.springframework.stereotype.Service;
 
 
 /**
@@ -17,6 +18,7 @@ import java.util.function.Function;
  * Предоставляет удобные методы для работы с базой данных с автоматическим управлением транзакциями.
  *
  */
+@Service
 @AllArgsConstructor
 public class CrudRepository {
 
